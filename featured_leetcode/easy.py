@@ -45,18 +45,6 @@ def is_palindrome(s: str) -> bool:
     return True
 
 
-# Good two pointers method demonstration
-def reverse_list_in_o1(lst: list) -> list:
-    start, finish = 0, len(lst) - 1
-
-    while start < finish:
-        lst[start], lst[finish] = lst[finish], lst[start]
-        start += 1
-        finish -= 1
-
-    return lst
-
-
 # Interesting solution with two dicts
 def find_judge(n: int, trust: list[list[int]]) -> int:
     """
