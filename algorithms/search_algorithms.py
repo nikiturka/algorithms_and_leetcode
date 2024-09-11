@@ -27,18 +27,13 @@ def binary_search(lst: list, num: int):
     return f"{num} not found in the array"
 
 
-def two_pointer_search_example(lst: list, target: int) -> tuple[int, int]:
-    start = 0
-    end = len(lst) - 1
+# Reverse list in O(1)
+def two_pointer_search_example(lst: list) -> list:
+    start, finish = 0, len(lst) - 1
 
-    while start < end:
-        current_sum = lst[start] + lst[end]
+    while start < finish:
+        lst[start], lst[finish] = lst[finish], lst[start]
+        start += 1
+        finish -= 1
 
-        if current_sum == target:
-            return lst[start], lst[end]
-        elif current_sum < target:
-            start += 1
-        else:
-            end -= 1
-
-    return -1, -1
+    return lst
